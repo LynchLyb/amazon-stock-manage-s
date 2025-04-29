@@ -35,6 +35,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.stock.manage</groupId>
+            <artifactId>stock-manage-file</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

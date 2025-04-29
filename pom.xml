@@ -24,6 +24,7 @@
         <module>stock-manage-file</module>
         <module>stock-manage-scheduler</module>
         <module>stock-manage-service</module>
+        <module>stock-manage-common</module>
     </modules>
 
     <dependencyManagement>
@@ -49,6 +50,16 @@
                 <artifactId>stock-manage-service</artifactId>
                 <version>${stock.manager.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.stock.manage</groupId>
+                <artifactId>stock-manage-file</artifactId>
+                <version>${stock.manager.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.stock.manage</groupId>
+                <artifactId>stock-manage-common</artifactId>
+                <version>${stock.manager.version}</version>
+            </dependency>
 <!--            <dependency>-->
 <!--                <groupId>com.stock.manage</groupId>-->
 <!--                <artifactId>stock-manage-starter</artifactId>-->
@@ -56,23 +67,62 @@
 <!--            </dependency>-->
 
 
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter</artifactId>
                 <version>${spring-boot.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring-boot.version}</version>
             </dependency>
 
+            <!-- MapStruct 依赖 -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>1.5.5.Final</version> <!-- 推荐稳定版本 -->
+            </dependency>
+
+            <!-- MapStruct 编译插件 -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>1.5.5.Final</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- Lombok 和 MapStruct 联合使用（如果用了Lombok） -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-mapstruct-binding</artifactId>
+                <version>0.2.0</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-web</artifactId>
                 <version>5.3.31</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>3.2.1</version>
             </dependency>
 
             <!-- MyBatis-Plus 核心包 -->
