@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-@RequestMapping("/api/sales")
+@RequestMapping("/api/data")
 @Slf4j
 public class SalesRecordImportController {
 
@@ -20,9 +20,10 @@ public class SalesRecordImportController {
     private SalesRecordImportService salesRecordImportService;
 
     @PostMapping("/import")
-    public ResponseEntity<String> importSalesRecord(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<String> importData(@RequestParam("file") MultipartFile file,
+                                             @RequestParam(value = "uploadTemplateName",required = false) String uploadTemplateName) {
         try {
-            salesRecordImportService.importSalesData(file);
+            salesRecordImportService.importSalesData(file, uploadTemplateName);
             return ResponseEntity.ok("导入成功");
         } catch (Exception e) {
             log.error("导入失败", e);

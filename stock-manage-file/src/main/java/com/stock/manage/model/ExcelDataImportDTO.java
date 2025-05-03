@@ -1,8 +1,6 @@
 package com.stock.manage.model;
 
 import com.alibaba.excel.annotation.ExcelProperty;
-import com.stock.manage.entity.Inventory;
-import constant.enums.SalesRecordTypeEnums;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,9 +28,6 @@ public class ExcelDataImportDTO {
 
     @ExcelProperty("产品时期")
     private String productStage;
-
-    @ExcelProperty("销量周期")
-    private SalesRecordTypeEnums recordType;
 
     /**
      * 销量

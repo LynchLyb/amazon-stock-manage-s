@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.reflection.MetaObject;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.Objects;
 import java.util.function.Supplier;
@@ -18,18 +20,17 @@ public class CommonMetaObjectHandler implements MetaObjectHandler {
 
     @Override
     public void insertFill(MetaObject metaObject) {
-        log.error("=======insertFill  start==========");
-        Date now = new Date();
+        LocalDateTime now = LocalDateTime.now(ZoneId.of("Asia/Shanghai"));
         // 插入时填充
-        this.strictInsertFill(metaObject, "createdAt", Date.class, now);
-        this.strictInsertFill(metaObject, "updatedAt", Date.class, now);
+        this.strictInsertFill(metaObject, "createdAt", LocalDateTime.class, now);
+        this.strictInsertFill(metaObject, "updatedAt", LocalDateTime.class, now);
     }
 
     @Override
     public void updateFill(MetaObject metaObject) {
-        Date now = new Date();
+        LocalDateTime now = LocalDateTime.now(ZoneId.of("Asia/Shanghai"));
         // 更新时填充
-        this.strictUpdateFill(metaObject, "updatedAt", Date.class, now);
+        this.strictUpdateFill(metaObject, "updatedAt", LocalDateTime.class, now);
     }
 
 

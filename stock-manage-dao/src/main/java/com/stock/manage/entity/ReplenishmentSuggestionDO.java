@@ -1,13 +1,13 @@
 package com.stock.manage.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.stock.manage.entity.base.BaseDO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 /**
  * 补货建议记录表（根据断货风险与海运周期倒推）
@@ -16,12 +16,9 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("replenishment_suggestion")
-public class ReplenishmentSuggestion implements Serializable {
+public class ReplenishmentSuggestionDO extends BaseDO implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-    @TableId(type = IdType.AUTO)
-    private Long id;
 
     private Long productId;
 
@@ -54,14 +51,4 @@ public class ReplenishmentSuggestion implements Serializable {
     private String source;
 
     private String adjustmentNote;
-
-    @TableField(value = "is_deleted")
-//    @TableLogic
-    private Integer isDeleted;
-
-    @TableField(fill = FieldFill.INSERT)
-    private Date createdAt;
-
-    @TableField(fill = FieldFill.INSERT_UPDATE)
-    private Date updatedAt;
 }

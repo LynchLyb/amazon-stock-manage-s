@@ -1,17 +1,17 @@
 package com.stock.manage.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.stock.manage.entity.base.BaseDO;
+import com.stock.manage.constant.enums.ProductStageEnums;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
-import java.util.Date;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @TableName("product")
-public class Product implements Serializable {
-
-    @TableId(type = IdType.AUTO)
-    private Long id;
+public class ProductDO extends BaseDO implements Serializable {
 
     @TableField("sku_code")
     private String skuCode;
@@ -23,21 +23,11 @@ public class Product implements Serializable {
     private String skuName;
 
     @TableField("product_stage")
-    private String productStage;
+    private ProductStageEnums productStage;
 
     @TableField("memo")
     private String memo;
 
     @TableField("extend_info")
     private String extendInfo;
-
-    @TableField(value = "is_deleted")
-//    @TableLogic
-    private Integer isDeleted;
-
-    @TableField(value = "created_at", fill = FieldFill.INSERT)
-    private Date createdAt;
-
-    @TableField(value = "updated_at", fill = FieldFill.INSERT_UPDATE)
-    private Date updatedAt;
 }
