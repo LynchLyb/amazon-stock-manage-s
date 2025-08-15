@@ -21,7 +21,10 @@
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>com.stock.manage</groupId>
+            <artifactId>stock-manage-dao</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.stock.manage</groupId>
             <artifactId>stock-manage-common</artifactId>
@@ -41,8 +44,19 @@
             <artifactId>commons-lang3</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <artifactId>lombok-mapstruct-binding</artifactId>
         </dependency>
     </dependencies>
 

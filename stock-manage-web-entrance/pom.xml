@@ -20,6 +20,20 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <name>aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -39,6 +53,28 @@
         <dependency>
             <groupId>com.stock.manage</groupId>
             <artifactId>stock-manage-file</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.stock.manage</groupId>
+            <artifactId>stock-manage-service</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.stock.manage</groupId>
+            <artifactId>stock-manage-dao</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.stock.manage</groupId>
+            <artifactId>stock-manage-common</artifactId>
+        </dependency>
+
+        <!-- SpringDoc OpenAPI -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.6.15</version>
         </dependency>
     </dependencies>
 

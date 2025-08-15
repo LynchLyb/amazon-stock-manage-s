@@ -1,4 +1,4 @@
-package com.stock.manage;
+package com.stock.manage.controller;
 
 import com.stock.manage.service.SalesRecordImportService;
 import lombok.extern.slf4j.Slf4j;
